@@ -1,0 +1,5 @@
+C:/Users/sovte/OneDrive/Документи/C++/DeadVault/build/CMakeFiles/vault_core.dir
+C:/Users/sovte/OneDrive/Документи/C++/DeadVault/build/CMakeFiles/vault_tests.dir
+C:/Users/sovte/OneDrive/Документи/C++/DeadVault/build/CMakeFiles/RUN_TESTS.dir
+C:/Users/sovte/OneDrive/Документи/C++/DeadVault/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/sovte/OneDrive/Документи/C++/DeadVault/build/CMakeFiles/ZERO_CHECK.dir

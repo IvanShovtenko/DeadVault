@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\sovte\OneDrive\Документи\C++\DeadVault\build\CMakeFiles\65082398b53e531af7e0d7c3a78f90e8\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{617BC8FA-2273-34A2-9137-EEF2B95E23D3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

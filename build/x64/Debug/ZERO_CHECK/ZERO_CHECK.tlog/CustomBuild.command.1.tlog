@@ -1,0 +1,10 @@
+^C:\USERS\SOVTE\ONEDRIVE\ДОКУМЕНТИ\C++\DEADVAULT\BUILD\CMAKEFILES\65082398B53E531AF7E0D7C3A78F90E8\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/sovte/OneDrive/Документи/C++/DeadVault -BC:/Users/sovte/OneDrive/Документи/C++/DeadVault/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/sovte/OneDrive/Документи/C++/DeadVault/build/DeadVault.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

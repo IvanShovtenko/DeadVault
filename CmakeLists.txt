@@ -13,19 +13,12 @@ enable_testing()
 
 add_library(vault_core
     src/core/vault.cpp
+    src/core/vault_storage.cpp
 )
 
 target_include_directories(vault_core
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
-)
-
-add_executable(deadvault
-    src/app/main.cpp
-)
-
-target_link_libraries(deadvault
-    PRIVATE vault_core
 )
 
 add_executable(vault_tests
