@@ -1,8 +1,5 @@
 #include "includes.hpp"
 
-
-
-
 int main(){
     deadvault::VaultStorage vault;
     std::filesystem::path path("tests/secret.bin");
@@ -32,43 +29,51 @@ int main(){
     // else {
     //     std::cout << "Failed to read file\n";
     // }
-   std::filesystem::path path2("storage/test.bin");
+//    std::filesystem::path path2("storage/test.bin");
 
-    // Данные, которые хотим записать
-    std::vector<unsigned char> original = {
-        10, 20, 30, 40, 50, 100, 200, 255
-    };
+//     // Данные, которые хотим записать
+//     std::vector<unsigned char> original = {
+//         10, 20, 30, 40, 50, 100, 200, 255
+//     };
 
-    // Записываем файл
-    if (vault.write_file(path2, original)) {
-        std::cout << "Write successful\n";
-    }
-    else {
-        std::cout << "Write failed\n";
-        return 1;
-    }
+//     // Записываем файл
+//     if (vault.write_file(path2, original)) {
+//         std::cout << "Write successful\n";
+//     }
+//     else {
+//         std::cout << "Write failed\n";
+//         return 1;
+//     }
 
-    // Читаем записанный файл
-    auto result = vault.read_file(path2);
+//     // Читаем записанный файл
+//     auto result = vault.read_file(path2);
 
-    if (result.has_value()) {
+//     if (result.has_value()) {
+//         std::cout << "Read successful\n";
+
+//         // Сравниваем два вектора
+//         if (original == *result) {
+//             std::cout << "Data matches!\n";
+//         }
+//         else {
+//             std::cout << "Data mismatch!\n";
+//         }
+//     }
+//     else {
+//         std::cout << "Read failed\n";
+//     }
+
+//     return 0;
+    std::filesystem::path p("storage/empty.bin");
+    auto r = vault.read_file(p);
+
+    if (r.has_value()) {
         std::cout << "Read successful\n";
-
-        // Сравниваем два вектора
-        if (original == *result) {
-            std::cout << "Data matches!\n";
-        }
-        else {
-            std::cout << "Data mismatch!\n";
-        }
+        std::cout << "Is empty: " << r->empty() << '\n';
     }
     else {
         std::cout << "Read failed\n";
     }
-
-    return 0;
-
-
 //     std::vector<unsigned char> encrypted = {10, 20, 30, 40, 255, 100, 150};
 //     std::filesystem::path file = "tests/Vault/secret.bin";
 //     std::ofstream file1(file,std::ios::binary);

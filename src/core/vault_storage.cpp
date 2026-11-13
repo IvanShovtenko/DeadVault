@@ -7,11 +7,12 @@ bool deadvault::VaultStorage::file_exists(
     return std::filesystem::exists(path);
 }
 
-std::optional<uintmax_t> deadvault::VaultStorage::get_file_size(
+std::optional<std::uintmax_t> deadvault::VaultStorage::get_file_size(
     const std::filesystem::path& path
 ) const
 {
-    if (std::filesystem::exists(path) == true){
+    try{
+        if (std::filesystem::exists(path) == true){
         if(std::filesystem::is_regular_file(path)){
             return std::filesystem::file_size(path);
         }
@@ -20,13 +21,18 @@ std::optional<uintmax_t> deadvault::VaultStorage::get_file_size(
         }
     }
     else return std::nullopt;
+    }
+    catch(const std::filesystem::filesystem_error& e){
+        return std::nullopt;
+    }
 }
 
 std::optional<std::vector<unsigned char>> deadvault::VaultStorage::read_file(
     const std::filesystem::path& path
 ) const
 {
-    if (std::filesystem::exists(path)==true){
+    try{
+        if (std::filesystem::exists(path)==true){
         if(std::filesystem::is_regular_file(path)){
             std::ifstream file(path, std::ios::binary);
             auto size = std::filesystem::file_size(path);
@@ -53,6 +59,10 @@ std::optional<std::vector<unsigned char>> deadvault::VaultStorage::read_file(
     }
     else{
         return std::nullopt;
+        }
+    }
+    catch (const std::filesystem::filesystem_error& e){
+        return std::nullopt;
     }
 }
 
@@ -61,7 +71,8 @@ bool deadvault::VaultStorage::write_file(
     const std::vector<unsigned char>& data
 ) const
 {
-    auto file = path.parent_path();
+    try{
+        auto file = path.parent_path();
     if(!file.empty()){
         if(!std::filesystem::exists(file)){
         std::filesystem::create_directories(file);
@@ -84,6 +95,10 @@ bool deadvault::VaultStorage::write_file(
     else {
         return false;
     }
-
     return true;
+    }
+    catch (const std::filesystem::filesystem_error& e) {
+        std::cout << e.what() << '\n';
+        return false;
+    }
 }
