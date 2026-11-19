@@ -13,3 +13,4 @@
 #include <filesystem>
 #include <fstream>
 #include "core/vault_storage.hpp"
+#include <assert.h>

@@ -1,9 +1,9 @@
 #include "includes.hpp"
 
 int main(){
-    deadvault::VaultStorage vault;
-    std::filesystem::path path("tests/secret.bin");
-    std::filesystem::path path1("tests/unknown.bin");
+    // deadvault::VaultStorage vault;
+    // std::filesystem::path path("tests/secret.bin");
+    // std::filesystem::path path1("tests/unknown.bin");
     // auto size = vault.get_file_size(path1);
     // auto size1 = vault.get_file_size(path);
     // std::cout<<std::boolalpha;
@@ -64,16 +64,16 @@ int main(){
 //     }
 
 //     return 0;
-    std::filesystem::path p("storage/empty.bin");
-    auto r = vault.read_file(p);
+    // std::filesystem::path p("storage/empty.bin");
+    // auto r = vault.read_file(p);
 
-    if (r.has_value()) {
-        std::cout << "Read successful\n";
-        std::cout << "Is empty: " << r->empty() << '\n';
-    }
-    else {
-        std::cout << "Read failed\n";
-    }
+    // if (r.has_value()) {
+    //     std::cout << "Read successful\n";
+    //     std::cout << "Is empty: " << r->empty() << '\n';
+    // }
+    // else {
+    //     std::cout << "Read failed\n";
+    // }
 //     std::vector<unsigned char> encrypted = {10, 20, 30, 40, 255, 100, 150};
 //     std::filesystem::path file = "tests/Vault/secret.bin";
 //     std::ofstream file1(file,std::ios::binary);
@@ -99,4 +99,42 @@ int main(){
 //     std::cout << static_cast<int>(i) << " ";
 // }
 
+    // deadvault::VaultStorage vault;
+    // std::filesystem::path path("tests/secret.bin");
+    // std::filesystem::path path1("tests/unknown.bin");
+    // std::vector<unsigned char> original = {
+    //      10, 20, 30, 40, 50, 100, 200, 255
+    //  };
+    // std::cout<<std::boolalpha;
+    // auto size = vault.get_file_size(path);
+    // auto size1 = vault.get_file_size(path1);
+    // assert(size.has_value());
+    // assert(*size==51);
+    // assert(!size1.has_value());
+    // auto r = vault.read_file(path);
+    // auto r1 = vault.read_file(path1);
+    // if(r.has_value()){
+    //     std::cout<<"Read successfully!\n";
+    //     std::cout<<"Is empty: "<<r->empty()<<"\n";
+    //     std::cout<<"Size: "<<r->size()<<"\n";
+    // }
+    // else{
+    //     std::cout<<"Failed\n";
+    // }
+    // if(r1.has_value()){
+    //     std::cout<<"Read successfully!\n";
+    //     std::cout<<"Is empty: "<<r1->empty()<<"\n";
+    //     std::cout<<"Size: "<<r1->size()<<"\n";
+    // }
+    // else{
+    //     std::cout<<"Failed\n";
+    // }
+    // auto result = vault.read_file(path);
+    // auto result1 = vault.read_file(path1);
+    // assert(result.has_value());
+    // assert(result1.has_value());
+    // assert(*result == original);
+    // assert(*result1 == original);
+
+    return 0;
 }
